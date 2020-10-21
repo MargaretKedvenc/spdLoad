@@ -17,16 +17,16 @@ services:
     - ./:/var/www:cached
     - ./docker/nginx/app.conf:/etc/nginx/conf.d/default.conf:ro
     ports:
-    - '8206:80'
+    - '8207:80'
     depends_on:
     - php-fpm
 
   database:
     image: mysql:5.7.22
     environment:
-      MYSQL_DATABASE: spdLoad
+      MYSQL_DATABASE: spd_load
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_USER: spdLoad
+      MYSQL_USER: spd_load
       MYSQL_PASSWORD: secret
     ports:
     - 3305:3306
